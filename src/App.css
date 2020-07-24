@@ -1,38 +1,289 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@100;400;700&display=swap%22");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: #252525;
 }
 
-.App-header {
-  background-color: #282c34;
+.search-page {
   min-height: 100vh;
+  /* background-color: #333333; */
+  font-family: "Rubik";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-page img {
+  width: 13rem;
+}
+
+.search-page section {
+  margin-bottom: 20rem;
+}
+
+.search-page section p {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: whitesmoke;
+}
+.container {
+  position: absolute;
+  margin: auto;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 100px;
+}
+.container .search {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: crimson;
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+.container .search:hover {
+  cursor: pointer;
+}
+.container .search::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 22px;
+  right: 0;
+  bottom: 0;
+  left: 22px;
+  width: 12px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+.container .search::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.5s;
+}
+.container input {
+  font-family: "Rubik", monospace;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: crimson;
+  color: white;
+  text-shadow: 0 0 10px crimson;
+  padding: 0 80px 0 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+}
+.container input:hover {
+  cursor: pointer;
+}
+.container input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+}
+.container input:focus ~ .search {
+  right: -250px;
+  background: #151515;
+  z-index: 6;
+}
+.container input:focus ~ .search::before {
+  top: 0;
+  left: 0;
+  width: 25px;
+}
+.container input:focus ~ .search::after {
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  border: none;
+  background: white;
+  border-radius: 0%;
+  transform: rotate(-45deg);
+}
+.container input::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-weight: bolder;
+}
+
+.App {
+  font-family: sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  max-width: 100vw;
 }
 
-.App-link {
-  color: #61dafb;
+/* USERINFOS */
+.user-info-panel {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-color: #333333; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.profile-image {
+  width: 12rem;
+  border-radius: 9999px;
+  border: 5px solid orangered;
+  margin-bottom: 1.5rem;
+  /* background-color: #333333; */
+}
+
+.image-link,
+.image-link a:visited {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  color: orangered;
+}
+.user-info-specifics {
+  color: whitesmoke;
+  margin-bottom: 3rem;
+}
+
+.user-info-panel h1 {
+  font-size: 2.3rem;
+}
+
+.panel-item {
+  margin-bottom: 1rem;
+}
+
+.stats-panel {
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-panel-item {
+  background-color: whitesmoke;
+  margin: 1rem;
+  padding: 1rem 0.5rem;
+  border-radius: 1px;
+}
+
+/* USERINFOs */
+
+/* uSERREPOS */
+
+.repos-card {
+  background-color: white;
+  margin: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+
+.repos-card a,
+.repos-card a:visited {
+  text-decoration: none;
+  color: #333333;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.card-bottom {
+  min-width: 100% !important;
+  display: flex;
+  justify-content: space-between;
+}
+.card-infos {
+  display: flex;
+}
+.card-infos p {
+  font-weight: lighter;
+  margin-right: 1rem;
+}
+/* uSERREPOS */
+
+.graph-panel {
+  background-color: white;
+  margin: 2rem 1rem;
+  padding: 1.5rem;
+  width: auto;
+}
+
+.graph-title {
+  font-size: 1.7rem;
+  font-family: sans-serif !important;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .card-grid {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1px;
+    row-gap: 1px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .stats-grid {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1px;
   }
 }
