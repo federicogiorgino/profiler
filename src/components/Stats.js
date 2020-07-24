@@ -34,31 +34,6 @@ const Stats = ({ stats, userRepos }) => {
       });
   }
 
-  //   const reposStats = {
-  //     labels: [],
-  //     datasets: [{ data: [], backgroundColor: "#3333333", borderWidth: "0.01" }],
-  //   };
-
-  //   if (stats) {
-  //     languageStats.map((element) => {
-  //       languageStatistics.labels.push(element.label);
-
-  //       languageStatistics.datasets[0].data.push(element.value);
-  //       languageStatistics.datasets[0].backgroundColor.push(element.color);
-  //     });
-  //   }
-
-  //   repoStats.map((repo) => {
-  //     reposStats.labels.push(repo.name);
-  //     reposStats.datasets[0].data.push(repo.stargazers_count);
-  //   });
-
-  //   const newRepoStats = userRepos
-  //     .filter((repo) => !repo.stargazers_count)
-  //     .sort((a, b) => b["stargazers_count"] - a["stargazers_count"])
-  //     .slice(0, 4);
-
-  //   setRepoStats(newRepoStats);
   useEffect(() => {
     setLanguageStats(stats);
     setRepoStats(userRepos);

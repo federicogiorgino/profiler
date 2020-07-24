@@ -37,7 +37,7 @@ const UserPage = (props) => {
     getUserInfo();
     getUserRepos();
     getStats();
-  }, []);
+  }, [username]);
 
   return (
     <div>
