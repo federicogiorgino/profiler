@@ -48,4 +48,52 @@ const UserPage = (props) => {
   );
 };
 
+// class UserPage extends Component {
+//   state = {
+//     info: {},
+//     repos: {},
+//     stats: {},
+//   };
+
+//   componentDidMount() {
+//     const getUserInfo = () => {
+//       axios
+//         .get(`https://api.github.com/users/${this.username}`)
+//         .then((data) => this.setState({ info: data.data }))
+//         .catch((err) => console.error(err));
+//     };
+
+//     const getUserRepos = () => {
+//       axios
+//         .get(`https://api.github.com/users/${this.username}/repos?per_page=30`)
+//         .then((data) => this.setState({ repos: data.data }))
+//         .catch((err) => console.error(err));
+//     };
+
+//     const getStats = () => {
+//       const user = new GhPolyglot(`${this.username}`);
+//       user.userStats((err, stats) => {
+//         if (err) console.error(err);
+//         this.setState({ stats: stats });
+//       });
+//     };
+//     const username = this.props.match.params.userId;
+//     getUserInfo();
+//     getUserRepos();
+//     getStats();
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         {this.state.info && <UserInfo props={this.state.info} />}
+//         {this.state.stats && this.state.repos && (
+//           <Stats props={this.state.stats} userRepos={this.state.repos} />
+//         )}
+//         {this.state.repos && <UserRepos props={this.state.repos} />}
+//       </div>
+//     );
+//   }
+// }
+
 export default UserPage;
